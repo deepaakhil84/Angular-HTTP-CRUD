@@ -44,3 +44,12 @@
   transform: translate(-50%, -50%);
   text-align: center;
 }
+.button {
+  position: absolute;
+  top: 65%;
+  left: 40%;
+  width: 100px;
+  height: 30px;
+  background-color: green;
+  color: black;
+}
