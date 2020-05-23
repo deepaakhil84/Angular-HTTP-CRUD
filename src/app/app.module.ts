@@ -4,6 +4,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { ListUserComponent } from './users/list-user/list-user.component';
 import { UserDetailsComponent } from './users/user-details/user-details.component';
+import { RouterModule, Routes } from '@angular/router'
+const appRoutes: Routes = [
+  { path: 'list', component: ListUserComponent },
+  { path: 'detail', component: UserDetailsComponent },
+  { path: '', redirectTo: '/list', pathMatch: 'full' }
+]
 
 @NgModule({
   declarations: [
@@ -13,7 +19,8 @@ import { UserDetailsComponent } from './users/user-details/user-details.componen
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]
