@@ -3,7 +3,7 @@ import { HttpClient, HttpParams, HttpHeaders } from "@angular/common/http";
 import { User } from "../../model/user";
 import { JsonPlaceholderService } from "../../Services/json-placeholder.service"
 import { Observable } from 'rxjs';
-import "../styles/styles.scss"
+import "../../styles/styles"
 
 
 @Component({
