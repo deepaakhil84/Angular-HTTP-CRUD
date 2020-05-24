@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { User } from '../model/user';
-import { map } from 'rxjs/operators'
+import { map } from 'rxjs/operators';
+import { Post } from '../model/post';
 
 const userImages: string[] = [
   "../assets/image/users-1.svg",
@@ -22,10 +23,14 @@ const userImages: string[] = [
 })
 export class JsonPlaceholderService {
   readonly URL = "https://jsonplaceholder.typicode.com/users";
+
+  readonly postURL = "https://jsonplaceholder.typicode.com/posts";
+
   constructor(private http: HttpClient) { }
 
   user: User[];
-  getdata(): Observable<User[]> {
+
+  getUser(): Observable<User[]> {
 
     return this.http.get<User[]>(this.URL).pipe(
       //pipe-adding a pipeline
@@ -39,7 +44,14 @@ export class JsonPlaceholderService {
         })
 
       ))
+
   }
+
+  getPost(): Observable<Post[]> {
+    return this.http.get<Post[]>(this.postURL)
+  }
+
+
 
 
 }

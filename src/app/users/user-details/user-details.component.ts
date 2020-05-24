@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { JsonPlaceholderService } from "../../Services/json-placeholder.service"
+import { Observable } from 'rxjs';
+import { Router, ActivatedRoute } from '@angular/router';
+import { Post } from '../../model/post'
 
 @Component({
   selector: 'app-user-details',
@@ -7,9 +11,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserDetailsComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private jsonplaceholder: JsonPlaceholderService,
+    private route: ActivatedRoute,
+    private router: Router) { }
+  posts: Observable<Post[]>
   ngOnInit(): void {
+    this.posts = this.jsonplaceholder.getPost()
   }
 
 }
