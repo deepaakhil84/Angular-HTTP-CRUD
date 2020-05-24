@@ -6,7 +6,9 @@
     <div class="text-box">
       <!-- <div class="text">{{ user.id }}</div> -->
       <h3 class="text">{{ user.name }}</h3>
-      <!-- <button class="button">Post</button> -->
+      <button class="button" [routerLink]="'/detail'" (click)="btnClick()">
+        Post
+      </button>
       <!-- <h2 class="text">{{ user.username }}</h2> -->
     </div>
   </div>

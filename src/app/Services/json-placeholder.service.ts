@@ -23,6 +23,8 @@ const userImages: string[] = [
 export class JsonPlaceholderService {
   readonly URL = "https://jsonplaceholder.typicode.com/users";
   constructor(private http: HttpClient) { }
+
+  user: User[];
   getdata(): Observable<User[]> {
 
     return this.http.get<User[]>(this.URL).pipe(
