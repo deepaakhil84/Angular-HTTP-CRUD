@@ -4,6 +4,8 @@ import { Observable } from 'rxjs';
 import { User } from '../model/user';
 import { map } from 'rxjs/operators';
 import { Post } from '../model/post';
+import { filter } from 'minimatch';
+
 
 const userImages: string[] = [
   "../assets/image/users-1.svg",
@@ -23,12 +25,13 @@ const userImages: string[] = [
 })
 export class JsonPlaceholderService {
   readonly URL = "https://jsonplaceholder.typicode.com/users";
-
   readonly postURL = "https://jsonplaceholder.typicode.com/posts";
 
   constructor(private http: HttpClient) { }
 
-  user: User[];
+  users: User[];
+
+  posts$: Observable<Post[]> = this.getPosts();
 
   getUser(): Observable<User[]> {
 
@@ -47,11 +50,30 @@ export class JsonPlaceholderService {
 
   }
 
-  getPost(): Observable<Post[]> {
+  // posts$ :Observable<Post[]> =
+  // this.http.get<Post[]>(this.postURL)
+  // if the property returning an obervable the property should have $ sign at end of 
+  // it so that we can know its an observable
+
+  getPosts(): Observable<Post[]> {
     return this.http.get<Post[]>(this.postURL)
   }
 
 
+  getUserById(id: number): User {
+    return this.users.find(user => user.id === id);
 
+  }
 
+  getPostByUserId(userId: number): Observable<Post[]> {
+    return this.posts$.pipe(
+      map(posts =>
+        posts.filter(post => {
+          return post.userId === userId;
+        })
+
+      )
+    )
+
+  }
 }

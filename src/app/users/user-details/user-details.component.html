@@ -1,4 +1,5 @@
-<div *ngFor="let post of posts | async">
+<div *ngFor="let post of posts$ | async">
+  <div>The user Id is{{ post.userId }}</div>
   <div>{{ post.title }}</div>
   <div>{{ post.id }}</div>
 </div>

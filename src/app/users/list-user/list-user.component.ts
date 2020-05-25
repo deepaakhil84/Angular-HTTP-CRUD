@@ -17,15 +17,17 @@ export class ListUserComponent {
 
   ) { }
   users: Observable<User[]>
+  user: User
   ngOnInit() {
     this.users = this.jsonplaceholder.getUser()
     console.log("ng on it", this.users);
 
   }
+  getUserBY
 
   btnClick(id: number) {
-    console.log("hooi")
-    this.router.navigate(['/detail']);
+    console.log("btnclick", id)
+    this.router.navigate(['/detail', id]);
 
   };
 
