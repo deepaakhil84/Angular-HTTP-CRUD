@@ -8,6 +8,8 @@ import { RouterModule, Routes } from '@angular/router'
 const appRoutes: Routes = [
   { path: 'list', component: ListUserComponent },
   { path: 'detail', component: UserDetailsComponent },
+  { path: "detail/:id", component: UserDetailsComponent },
+
   { path: '', redirectTo: '/list', pathMatch: 'full' }
 ]
 
