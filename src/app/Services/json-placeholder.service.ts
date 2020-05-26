@@ -28,13 +28,10 @@ export class JsonPlaceholderService {
   readonly postURL = "https://jsonplaceholder.typicode.com/posts";
 
   constructor(private http: HttpClient) { }
-
-  users: User[];
-
+  users$: Observable<User[]> = this.getUser();
   posts$: Observable<Post[]> = this.getPosts();
 
   getUser(): Observable<User[]> {
-
     return this.http.get<User[]>(this.URL).pipe(
       //pipe-adding a pipeline
       map(users =>
@@ -44,10 +41,11 @@ export class JsonPlaceholderService {
           //grab each user and change it and returns
           user.image = userImages[index];
           return user;
+          console.log("from user", user)
         })
 
       ))
-
+    console.log("users", this.users$);
   }
 
   // posts$ :Observable<Post[]> =
@@ -59,9 +57,15 @@ export class JsonPlaceholderService {
     return this.http.get<Post[]>(this.postURL)
   }
 
+  getUserById(id: number): Observable<User[]> {
+    return this.users$.pipe(
+      map(users =>
+        users.filter(post => {
+          return post.id === id
+        }))
+    )
 
-  getUserById(id: number): User {
-    return this.users.find(user => user.id === id);
+
 
   }
 

@@ -1,1 +1,10 @@
 @import "../../../styles/styles.scss";
+.box-width {
+  border: 1px solid blue;
+  width: 80%;
+}
+.post-container {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+}

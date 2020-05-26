@@ -3,6 +3,7 @@ import { JsonPlaceholderService } from "../../Services/json-placeholder.service"
 import { Observable } from 'rxjs';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Post } from '../../model/post'
+import { User } from '../../model/user'
 
 
 @Component({
@@ -12,6 +13,7 @@ import { Post } from '../../model/post'
 })
 export class UserDetailsComponent implements OnInit {
   posts$: Observable<Post[]>
+  users$: Observable<User[]>
 
   constructor(private jsonplaceholder: JsonPlaceholderService,
     private route: ActivatedRoute,
@@ -21,6 +23,9 @@ export class UserDetailsComponent implements OnInit {
     this.route.paramMap.subscribe(parmeterMap => {
       const userId = +parmeterMap.get('id');
       // console.log("id from detail", id);
+
+      this.users$ = this.jsonplaceholder.getUserById(userId);
+      // sending the Id to filtered the post
       this.posts$ = this.jsonplaceholder.getPostByUserId(userId);
     })
   }

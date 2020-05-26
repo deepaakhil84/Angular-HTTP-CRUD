@@ -1,5 +1,18 @@
-<div *ngFor="let post of posts$ | async">
-  <div>The user Id is{{ post.userId }}</div>
-  <div>{{ post.title }}</div>
-  <div>{{ post.id }}</div>
+<div class="container ">
+  <div class="header"></div>
+  <div *ngFor="let user of users$ | async">
+    <!-- <div>The user Id{{ user.id }}</div> -->
+    <div class="image-box box-width">
+      <h2>{{ user.name }}</h2>
+      <img class="image " src="{{ user.image }}" />
+    </div>
+  </div>
+</div>
+<div class="post-container">
+  <div *ngFor="let post of posts$ | async">
+    <!-- <div>The post Id is{{ post.userId }}</div> -->
+
+    <h3>{{ post.title }}</h3>
+  </div>
+  <!-- <div>{{ post.id }}</div> -->
 </div>
