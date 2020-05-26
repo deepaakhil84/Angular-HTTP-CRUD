@@ -57,12 +57,17 @@ export class JsonPlaceholderService {
     return this.http.get<Post[]>(this.postURL)
   }
 
-  getUserById(id: number): Observable<User[]> {
+  getUserById(id: number): Observable<User> {
     return this.users$.pipe(
+      //returns an array of single user in it
       map(users =>
         users.filter(post => {
           return post.id === id
         }))
+      //map returns a single user
+      , map(user => user[0]
+
+      )
     )
 
 
@@ -77,6 +82,7 @@ export class JsonPlaceholderService {
         })
 
       )
+
     )
 
   }
