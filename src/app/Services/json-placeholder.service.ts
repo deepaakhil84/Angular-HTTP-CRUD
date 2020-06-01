@@ -30,6 +30,7 @@ export class JsonPlaceholderService {
   constructor(private http: HttpClient) { }
   users$: Observable<User[]> = this.getUser();
   posts$: Observable<Post[]> = this.getPosts();
+  newpost: Post
 
   getUser(): Observable<User[]> {
     return this.http.get<User[]>(this.URL).pipe(
@@ -53,9 +54,6 @@ export class JsonPlaceholderService {
   // if the property returning an obervable the property should have $ sign at end of 
   // it so that we can know its an observable
 
-  getPosts(): Observable<Post[]> {
-    return this.http.get<Post[]>(this.postURL)
-  }
 
   getUserById(id: number): Observable<User> {
     return this.users$.pipe(
@@ -67,11 +65,11 @@ export class JsonPlaceholderService {
       //map returns a single user
       , map(user => user[0]
 
-      )
-    )
+      ))
+  }
 
-
-
+  getPosts(): Observable<Post[]> {
+    return this.http.get<Post[]>(this.postURL)
   }
 
   getPostByUserId(userId: number): Observable<Post[]> {
@@ -86,4 +84,16 @@ export class JsonPlaceholderService {
     )
 
   }
+
+
+  //create component
+
+  addPost(newPost: Partial<Post>): Observable<Post> {
+    return this.http.post<Post>('postUrl', this.newpost)
+
+    // console log an obervable
+    // pipe and tap
+
+  }
+
 }
