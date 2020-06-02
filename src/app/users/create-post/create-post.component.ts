@@ -33,6 +33,7 @@ export class CreatePostComponent implements OnInit {
   }
 
   savePost(post: Partial<Post>): void {
+
     this.newPost = {
       body: this.body,
       title: this.title,
@@ -41,8 +42,10 @@ export class CreatePostComponent implements OnInit {
     }
 
     this.jsonplaceholder.addPost(this.newPost).subscribe();
-    this.router.navigate(['/post:id']);
-  }
 
+  }
+  navigate() {
+    this.router.navigate(['/detail:id']);
+  }
 
 }

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { User } from '../model/user';
-import { map } from 'rxjs/operators';
+import { map, tap } from 'rxjs/operators';
 import { Post } from '../model/post';
 import { filter } from 'minimatch';
 
@@ -90,10 +90,14 @@ export class JsonPlaceholderService {
 
   addPost(newPost: Partial<Post>): Observable<Post> {
     return this.http.post<Post>('postUrl', this.newpost)
-
-    // console log an obervable
-    // pipe and tap
-
+      // console log an obervable using pipe and tap
+      .pipe(
+        map(x => <Post>{
+          title: x.title,
+          body: x.body
+        }),
+        tap(npost => console.log("new post from service", npost))
+      )
   }
 
 }
