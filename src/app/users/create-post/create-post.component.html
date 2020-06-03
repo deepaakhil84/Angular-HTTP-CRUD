@@ -1,6 +1,6 @@
 <h1>Add a new Post</h1>
 
-<form #postForm="ngForm" (ngSubmit)="savePost(postForm.value)">
+<form #postForm="ngForm" (ngSubmit)="savePost()">
   <div class="form-group">
     <label for="title">Add New Title</label>
     <input
@@ -21,7 +21,7 @@
       name="body"
     />
 
-    <button type="submit" (click)="navigate()">Save</button>
+    <button type="submit">Save</button>
   </div>
 </form>
 

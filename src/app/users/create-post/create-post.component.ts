@@ -27,13 +27,11 @@ export class CreatePostComponent implements OnInit {
     this.route.paramMap.subscribe(parmeterMap => {
       this.userId = +parmeterMap.get('id');
       console.log("userid", this.userId);
-
-
     })
   }
-
-  savePost(post: Partial<Post>): void {
-
+  //saving partial post
+  // savePost(post: Partial<Post>): void {
+  savePost(): void {
     this.newPost = {
       body: this.body,
       title: this.title,
@@ -41,11 +39,11 @@ export class CreatePostComponent implements OnInit {
 
     }
 
-    this.jsonplaceholder.addPost(this.newPost).subscribe();
+    this.jsonplaceholder.addPost(this.newPost)
+    this.router.navigate(['detail/', this.userId]);
+  }
 
-  }
-  navigate() {
-    this.router.navigate(['/detail:id']);
-  }
+
+
 
 }
