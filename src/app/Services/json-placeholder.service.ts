@@ -89,13 +89,9 @@ export class JsonPlaceholderService {
   //create component
 
   addPost(newPost: Partial<Post>): Observable<Post> {
-    return this.http.post<Post>('postUrl', this.newpost)
+    return this.http.post<Post>(this.postURL, this.newpost)
       // console log an obervable using pipe and tap
       .pipe(
-        map(x => <Post>{
-          title: x.title,
-          body: x.body
-        }),
         tap(npost => console.log("new post from service", npost))
       )
   }
