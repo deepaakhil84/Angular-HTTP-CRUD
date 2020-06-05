@@ -1,5 +1,4 @@
 @import "../styles/flex.scss";
-@import "../styles/flex.scss";
 .container {
   @include flexCenter;
   width: 100%;
@@ -8,8 +7,5 @@
   @include flexCenter;
   border: 2px solid rgb(168, 172, 168);
   box-shadow: 5px 10px #545755;
-  text-align: center;
   padding: 20px;
-  // flex-wrap: wrap;
-  // justify-content: space-around;
 }

@@ -1,15 +1,31 @@
 @import "../../../styles/styles.scss";
 .post-container {
-  display: flex;
-  flex-direction: column;
+  width: 100%;
+  margin-top: 50px;
+  @include flexColumn;
+  align-items: center;
+  @include respond-to("md") {
+    flex-direction: row;
+  }
 }
-.box-width {
+.image-width {
   width: 80%;
+  @include respond-to("sm") {
+    width: 400px;
+  }
+  @include respond-to("lg") {
+  }
 }
 
 .text-style {
   padding-bottom: 14px;
 }
-.btn-style {
-  margin-top: 16px;
+.post-box {
+  font-size: 20px;
+  @include respond-to("sm") {
+    font-size: map-get($font-size, xsmall);
+  }
+  @include respond-to("lg") {
+    font-size: map-get($font-size, small);
+  }
 }

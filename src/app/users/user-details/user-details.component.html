@@ -3,24 +3,24 @@
     <h1 class="header-text">User Posts</h1>
   </div>
   <div class="post-container">
-    <div class="card box-width">
+    <div class="image-box">
       <div *ngIf="user$ | async as user">
         <h2 class="card-text text-style">{{ user.name }}</h2>
-        <img class="image " src="{{ user.image }}" />
+        <img class="image image-width" src="{{ user.image }}" />
       </div>
     </div>
 
-    <div class="card-post">
+    <div class="post-box">
       <div *ngFor="let post of posts$ | async">
         <li>{{ post.title }}</li>
       </div>
+      <button
+        class="btn-click btn-style"
+        *ngIf="user$ | async as user"
+        (click)="createPost(user.id)"
+      >
+        <span clas="btn-click-text"> create post</span>
+      </button>
     </div>
-    <button
-      class="btn-click btn-style"
-      *ngIf="user$ | async as user"
-      (click)="createPost(user.id)"
-    >
-      <span clas="btn-click-text"> create post</span>
-    </button>
   </div>
 </div>
