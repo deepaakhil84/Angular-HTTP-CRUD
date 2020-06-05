@@ -17,6 +17,9 @@
   @include respond-to("lg") {
     width: 30%;
   }
+  @include respond-to("xl") {
+    width: 30%;
+  }
 }
 .card:hover .card-text-box {
   opacity: 1;
@@ -25,8 +28,8 @@
   @include flexColumn;
   position: absolute;
   overflow: hidden;
-  height: 91%;
-  width: 91%;
+  height: 94%;
+  width: 94%;
   opacity: 0;
   transition: 5s, ease;
   background-color: $bg-color;
@@ -36,10 +39,10 @@
   margin: 0;
 
   @include respond-to("md") {
-    font-size: map-get($font-size, medium);
+    font-size: map-get($font-size, small);
   }
   @include respond-to("lg") {
-    font-size: map-get($font-size, regular);
+    font-size: map-get($font-size, medium);
   }
 }
 .text-position {

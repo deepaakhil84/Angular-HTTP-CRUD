@@ -9,12 +9,15 @@
   background-color: rgb(84, 133, 84);
 
   @include respond-to("sm") {
-    height: map-get($height, small);
+    height: map-get($height, regular);
   }
   @include respond-to("md") {
     height: map-get($height, medium);
     @include respond-to("lg") {
       height: map-get($height, large);
+    }
+    @include respond-to("xl") {
+      height: 107px;
     }
   }
 

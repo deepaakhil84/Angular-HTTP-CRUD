@@ -12,14 +12,15 @@
 
     <div class="post-box">
       <div *ngFor="let post of posts$ | async">
-        <li>{{ post.title }}</li>
+        <p class="post-title">{{ post.title }}</p>
+        <p class="post-body">{{ post.body }}</p>
       </div>
       <button
         class="btn-click btn-style"
         *ngIf="user$ | async as user"
         (click)="createPost(user.id)"
       >
-        <span clas="btn-click-text"> create post</span>
+        <span class="btn-click-text"> create post</span>
       </button>
     </div>
   </div>

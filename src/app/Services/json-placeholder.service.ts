@@ -4,8 +4,6 @@ import { Observable } from 'rxjs';
 import { User } from '../model/user';
 import { map, tap } from 'rxjs/operators';
 import { Post } from '../model/post';
-import { filter } from 'minimatch';
-
 
 const userImages: string[] = [
   "../assets/image/users-1.svg",
@@ -48,12 +46,7 @@ export class JsonPlaceholderService {
       ))
     console.log("users", this.users$);
   }
-
-  // posts$ :Observable<Post[]> =
-  // this.http.get<Post[]>(this.postURL)
   // if the property returning an obervable the property should have $ sign at end of 
-  // it so that we can know its an observable
-
 
   getUserById(id: number): Observable<User> {
     return this.users$.pipe(
@@ -79,12 +72,8 @@ export class JsonPlaceholderService {
           return post.userId === userId;
         })
 
-      )
-
-    )
-
+      ))
   }
-
 
   //create component
 

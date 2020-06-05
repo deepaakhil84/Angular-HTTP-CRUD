@@ -1,11 +1,11 @@
 @import "../styles/variables.scss";
 .btn-click {
   width: 100px;
-  height: 30px;
+  height: 37px;
   background-color: $btn-color;
   @include respond-to("md") {
     width: 110px;
-    height: 40px;
+    height: 45px;
   }
 
   @include respond-to("lg") {
@@ -19,16 +19,16 @@
   top: 65%;
   left: 35%;
   @include respond-to("lg") {
-    left: 35px;
+    left: 59px;
+  }
+  @include respond-to("xl") {
+    left: 134px;
   }
 }
 .btn-click-text {
   font-size: map-get($font-size, xsmall);
 
-  @include respond-to("md") {
-    font-size: map-get($font-size, regular);
-  }
   @include respond-to("lg") {
-    font-size: map-get($font-size, medium);
+    font-size: map-get($font-size, regular);
   }
 }

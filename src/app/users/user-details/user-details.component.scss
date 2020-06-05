@@ -1,31 +1,75 @@
 @import "../../../styles/styles.scss";
 .post-container {
-  width: 100%;
-  margin-top: 50px;
   @include flexColumn;
+  padding-top: 30px;
+  width: 100%;
+  flex-wrap: wrap;
   align-items: center;
-  @include respond-to("md") {
-    flex-direction: row;
-  }
 }
-.image-width {
+.image-box {
   width: 80%;
   @include respond-to("sm") {
-    width: 400px;
+    width: 52%;
+  }
+  @include respond-to("md") {
+    width: 55%;
   }
   @include respond-to("lg") {
+    width: 56%;
   }
 }
-
-.text-style {
-  padding-bottom: 14px;
+.image {
+  width: 100%;
 }
 .post-box {
-  font-size: 20px;
+  padding: 18px;
+  margin: 8px;
+  background-color: $img-bg-color;
+  box-shadow: 5px 10px #888888;
+  border: 1px solid black;
   @include respond-to("sm") {
-    font-size: map-get($font-size, xsmall);
+    width: 70%;
+  }
+  @include respond-to("md") {
+    width: 78%;
   }
   @include respond-to("lg") {
-    font-size: map-get($font-size, small);
+    width: 75%;
+  }
+  @include respond-to("xl") {
+    width: 87%;
+  }
+}
+.post-title {
+  font-size: 15px;
+  font-weight: bold;
+  @include respond-to("lg") {
+    font-size: 25px;
+  }
+  @include respond-to("xl") {
+    font-size: 34px;
+  }
+}
+.post-body {
+  font-size: 15px;
+  @include respond-to("lg") {
+    font-size: 23px;
+  }
+  @include respond-to("xl") {
+    font-size: 31px;
+  }
+}
+.btn-style {
+  width: 154px;
+  height: 40px;
+  margin: 0 auto;
+  display: block;
+  @include respond-to("lg") {
+    width: 187px;
+    height: 51px;
+    margin-top: 20px;
+  }
+  @include respond-to("lg") {
+    height: 70px;
   }
 }

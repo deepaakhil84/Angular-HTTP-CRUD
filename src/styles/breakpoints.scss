@@ -1,8 +1,11 @@
 $breakpoints: (
   "sm": 767px,
   "md": 992px,
-  "lg": 1200px
+  "lg": 1023px,
+  "xl": 1440px
 ) !default;
+// @include respond-to("lg") {}
+
 @mixin respond-to($breakpoint) {
   // If the key exists in the map
   @if map-has-key($breakpoints, $breakpoint) {
