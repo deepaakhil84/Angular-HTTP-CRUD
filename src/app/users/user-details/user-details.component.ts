@@ -27,9 +27,9 @@ export class UserDetailsComponent implements OnInit {
       this.posts$ = this.jsonplaceholder.getPostByUserId(userId);
     })
   }
+
   createPost(id: number) {
     console.log("from user detail page", id);
     this.router.navigate(['/post', id]);
-
   }
 }

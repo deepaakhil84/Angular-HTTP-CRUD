@@ -14,6 +14,7 @@
     left: 35px;
   }
 }
+
 .btn-position {
   position: absolute;
   top: 65%;
@@ -25,9 +26,9 @@
     left: 134px;
   }
 }
+
 .btn-click-text {
   font-size: map-get($font-size, xsmall);
-
   @include respond-to("lg") {
     font-size: map-get($font-size, regular);
   }

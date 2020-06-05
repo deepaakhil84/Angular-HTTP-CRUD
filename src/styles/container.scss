@@ -1,8 +1,10 @@
 @import "../styles/flex.scss";
+
 .container {
   @include flexCenter;
   width: 100%;
 }
+
 .card-post {
   @include flexCenter;
   border: 2px solid rgb(168, 172, 168);

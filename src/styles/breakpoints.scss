@@ -4,7 +4,6 @@ $breakpoints: (
   "lg": 1023px,
   "xl": 1440px
 ) !default;
-// @include respond-to("lg") {}
 
 @mixin respond-to($breakpoint) {
   // If the key exists in the map
@@ -14,6 +13,7 @@ $breakpoints: (
       @content;
     }
   }
+
   // If the key doesn't exist in the map
   @else {
     @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "

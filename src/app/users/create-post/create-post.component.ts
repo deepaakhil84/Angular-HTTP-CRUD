@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { Post } from '../../model/post';
-import { Router, ActivatedRoute } from '@angular/router';
-import { Observable } from 'rxjs'
-import { JsonPlaceholderService } from '../../Services/json-placeholder.service';
+import { Component, OnInit } from "@angular/core";
+import { Post } from "../../model/post";
+import { Router, ActivatedRoute } from "@angular/router";
+import { Observable } from "rxjs";
+import { JsonPlaceholderService } from "../../Services/json-placeholder.service";
 
 
 @Component({

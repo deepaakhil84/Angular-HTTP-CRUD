@@ -20,9 +20,7 @@ export class ListUserComponent {
   ngOnInit() {
     this.users = this.jsonplaceholder.getUser()
     console.log("ng on it", this.users);
-
   }
-
 
   btnClick(id: number) {
     console.log("btnclick", id)
