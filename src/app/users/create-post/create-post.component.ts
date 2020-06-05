@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Post } from "../../model/post"
+import { Post } from '../../model/post';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs'
-import { JsonPlaceholderService } from "../../Services/json-placeholder.service"
+import { JsonPlaceholderService } from '../../Services/json-placeholder.service';
 
 
 @Component({
@@ -31,7 +31,7 @@ export class CreatePostComponent implements OnInit {
   }
   //saving partial post
   // savePost(post: Partial<Post>): void {
-  savePost(): void {
+  savePost() {
     this.newPost = {
       body: this.body,
       title: this.title,
@@ -42,8 +42,4 @@ export class CreatePostComponent implements OnInit {
     this.jsonplaceholder.addPost(this.newPost)
     this.router.navigate(['detail/', this.userId]);
   }
-
-
-
-
 }

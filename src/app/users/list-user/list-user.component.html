@@ -1,15 +1,17 @@
 <div class="container">
-  <div class="header"></div>
+  <div class="header">
+    <h1 class="header-text">List Of Users From HTTP</h1>
+  </div>
   <div class="card" *ngFor="let user of users | async">
     <img class="image" src="{{ user.image }}" />
 
-    <div class="text-box">
-      <!-- <div class="text">{{ user.id }}</div> -->
-      <h3 class="text">{{ user.name }}</h3>
-      <button class="button" (click)="btnClick(user.id)">
-        Post
+    <!-- text box inside the image -->
+
+    <div class="card-text-box">
+      <h2 class="card-text text-position">{{ user.name }}</h2>
+      <button class="btn-click btn-position" (click)="btnClick(user.id)">
+        <span class="btn-click-text">Post</span>
       </button>
-      <!-- <h2 class="text">{{ user.username }}</h2> -->
     </div>
   </div>
 </div>

@@ -1,23 +1,26 @@
-<div class="container ">
-  <div *ngIf="user$ | async as user">
-    <div class="header"></div>
-    <div>
-      <!-- <div>The user Id{{ user.id }}</div> -->
-      <div class="card box-width">
-        <h2>{{ user.name }}</h2>
+<div class="container">
+  <div class="header">
+    <h1 class="header-text">User Posts</h1>
+  </div>
+  <div class="post-container">
+    <div class="card box-width">
+      <div *ngIf="user$ | async as user">
+        <h2 class="card-text text-style">{{ user.name }}</h2>
         <img class="image " src="{{ user.image }}" />
       </div>
     </div>
-  </div>
-  <div class="post-container">
-    <div *ngFor="let post of posts$ | async">
-      <!-- <div>The post Id is{{ post.userId }}</div> -->
 
-      <h3>{{ post.title }}</h3>
+    <div class="card-post">
+      <div *ngFor="let post of posts$ | async">
+        <li>{{ post.title }}</li>
+      </div>
     </div>
-    <!-- <div>{{ post.id }}</div> -->
-    <button *ngIf="user$ | async as user" (click)="createPost(user.id)">
-      create post
+    <button
+      class="btn-click btn-style"
+      *ngIf="user$ | async as user"
+      (click)="createPost(user.id)"
+    >
+      <span clas="btn-click-text"> create post</span>
     </button>
   </div>
 </div>

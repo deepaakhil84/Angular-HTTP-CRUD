@@ -1,5 +1,37 @@
+@import "../styles/breakpoints.scss";
+@import "../styles/variables.scss";
+@import "../styles/flex.scss";
+
 .header {
+  text-align: center;
   width: 100%;
-  height: 50px;
+  height: map-get($height, xsmall);
   background-color: rgb(84, 133, 84);
+
+  @include respond-to("sm") {
+    height: map-get($height, small);
+  }
+  @include respond-to("md") {
+    height: map-get($height, medium);
+    @include respond-to("lg") {
+      height: map-get($height, large);
+    }
+  }
+
+  .header-text {
+    margin: 0;
+    font-size: map-get($font-size, xsmall);
+    padding-top: 13px;
+
+    @include respond-to("sm") {
+      font-size: map-get($font-size, regular);
+    }
+    @include respond-to("md") {
+      font-size: map-get($font-size, medium);
+    }
+    @include respond-to("lg") {
+      font-size: map-get($font-size, bold);
+      padding-top: 14px;
+    }
+  }
 }

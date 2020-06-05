@@ -1,9 +1,8 @@
-import { Component } from '@angular/core';
-import { HttpClient, HttpParams, HttpHeaders } from "@angular/common/http";
+import { Component } from "@angular/core";
 import { User } from "../../model/user";
 import { JsonPlaceholderService } from "../../Services/json-placeholder.service"
-import { Observable } from 'rxjs';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Observable } from "rxjs";
+import { Router, ActivatedRoute } from "@angular/router";
 
 @Component({
   selector: 'app-list-user',
@@ -23,7 +22,7 @@ export class ListUserComponent {
     console.log("ng on it", this.users);
 
   }
-  getUserBY
+
 
   btnClick(id: number) {
     console.log("btnclick", id)

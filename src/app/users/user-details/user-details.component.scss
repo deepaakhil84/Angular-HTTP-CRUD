@@ -1,10 +1,15 @@
 @import "../../../styles/styles.scss";
-.box-width {
-  border: 1px solid blue;
-  width: 80%;
-}
 .post-container {
   display: flex;
-  text-align: center;
   flex-direction: column;
+}
+.box-width {
+  width: 80%;
+}
+
+.text-style {
+  padding-bottom: 14px;
+}
+.btn-style {
+  margin-top: 16px;
 }

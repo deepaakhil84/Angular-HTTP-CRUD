@@ -1,0 +1,31 @@
+@import "../styles/variables.scss";
+.btn-click {
+  width: 100px;
+  height: 30px;
+  background-color: $btn-color;
+  @include respond-to("md") {
+    width: 110px;
+    height: 40px;
+  }
+
+  @include respond-to("lg") {
+    width: 154px;
+    height: 48px;
+    left: 35px;
+  }
+}
+.btn-position {
+  position: absolute;
+  top: 65%;
+  left: 35%;
+  @include respond-to("lg") {
+    left: 35px;
+  }
+}
+.btn-click-text {
+  font-size: map-get($font-size, xsmall);
+
+  @include respond-to("md") {
+    font-size: map-get($font-size, regular);
+  }
+}

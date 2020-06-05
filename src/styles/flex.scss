@@ -1,0 +1,9 @@
+@mixin flexCenter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+@mixin flexColumn {
+  display: flex;
+  flex-direction: column;
+}
