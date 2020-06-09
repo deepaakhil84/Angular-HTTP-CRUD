@@ -9,11 +9,12 @@
         <img class="image image-width" src="{{ user.image }}" />
       </div>
     </div>
-
-    <div class="post-box">
+    <div class="post">
       <div *ngFor="let post of posts$ | async">
-        <p class="post-title">{{ post.title }}</p>
-        <p class="post-body">{{ post.body }}</p>
+        <div class="post-box">
+          <p class="post-title">{{ post.title }}</p>
+          <p class="post-body">{{ post.body }}</p>
+        </div>
       </div>
       <button
         class="btn-click btn-style"

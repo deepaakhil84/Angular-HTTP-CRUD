@@ -4,12 +4,17 @@
   @include flexColumn;
   padding-top: 30px;
   width: 100%;
-  flex-wrap: wrap;
+
   align-items: center;
+
+  @include respond-to("xl") {
+    flex-direction: row;
+  }
 }
 
 .image-box {
   width: 80%;
+  flex-shrink: 1;
   @include respond-to("sm") {
     width: 52%;
   }
@@ -19,30 +24,27 @@
   @include respond-to("lg") {
     width: 56%;
   }
+  @include respond-to("xl") {
+    width: 45%;
+  }
 }
 
 .image {
   width: 100%;
 }
-
+.post {
+  width: 75%;
+  border: 1px solid green;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .post-box {
   padding: 18px;
-  margin: 8px;
+  margin: 2px;
   background-color: $img-bg-color;
   box-shadow: 5px 10px #888888;
   border: 1px solid black;
-  @include respond-to("sm") {
-    width: 70%;
-  }
-  @include respond-to("md") {
-    width: 78%;
-  }
-  @include respond-to("lg") {
-    width: 75%;
-  }
-  @include respond-to("xl") {
-    width: 87%;
-  }
 }
 
 .post-title {
@@ -67,6 +69,7 @@
 }
 
 .btn-style {
+  margin-top: 5px;
   width: 154px;
   height: 40px;
   margin: 0 auto;
