@@ -2,14 +2,9 @@
 
 .post-container {
   @include flexColumn;
-  padding-top: 30px;
+  padding-top: 17px;
   width: 100%;
-
   align-items: center;
-
-  @include respond-to("xl") {
-    flex-direction: row;
-  }
 }
 
 .image-box {
@@ -33,17 +28,16 @@
   width: 100%;
 }
 .post {
-  width: 75%;
-  border: 1px solid green;
+  width: 95%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 .post-box {
-  padding: 18px;
-  margin: 2px;
+  padding: 20px;
+  margin-top: 10px;
   background-color: $img-bg-color;
-  box-shadow: 5px 10px #888888;
+  box-shadow: 3px 5px #888888;
   border: 1px solid black;
 }
 
