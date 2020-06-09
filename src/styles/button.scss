@@ -17,18 +17,35 @@
 
 .btn-position {
   position: absolute;
-  top: 65%;
-  left: 35%;
+  top: 60%;
+  left: 32%;
+  @include respond-to("sm") {
+    top: 60%;
+    left: 33%;
+  }
+  @include respond-to("md") {
+    top: 57%;
+    left: 35%;
+  }
   @include respond-to("lg") {
-    left: 59px;
+    top: 65%;
+    left: 25%;
   }
   @include respond-to("xl") {
-    left: 134px;
+    top: 63%;
+    left: 31%;
   }
 }
 
 .btn-click-text {
   font-size: map-get($font-size, xsmall);
+  // @include respond-to("sm") {
+  //   font-size: map-get($font-size, xsmall);
+  // }
+
+  // @include respond-to("md") {
+  //   font-size: map-get($font-size, xsmall);
+  // }
   @include respond-to("lg") {
     font-size: map-get($font-size, regular);
   }
